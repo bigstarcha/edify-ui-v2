@@ -1,0 +1,16 @@
+@import 'tailwindcss';
+
+@theme {
+    --color-base: #fdfdfd;
+    --color-primary-400: #13d49d;
+    --color-primary-500: #10b888;
+    --color-primary-600: #0e9c73;
+}
+
+@layer base {
+    html {
+        background-color: var(--color-base);
+    }
+}
+
+/* Wait, just by doing this, tailwind styles apply. WHAT? HOW? HOW?? */
