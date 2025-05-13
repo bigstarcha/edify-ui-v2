@@ -34,7 +34,8 @@ function SearchProfile({
 
     // We will need to figure out a way to pass this into the backend
     const [currFriendStatus, setCurrFriendStatus] = useState(friendStatus);
-    const moreOptionsButtonStyle = "ml-3 p-2 text-xl rounded-md bg-base hover:bg-gray-300 transition duration-200 w-max";
+    const moreOptionsButtonStyle =
+        'ml-3 p-2 text-xl rounded-md bg-base hover:bg-gray-300 transition duration-200 w-max';
 
     const profileCtaButton = useMemo(() => {
         switch (currFriendStatus) {

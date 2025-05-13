@@ -9,7 +9,7 @@ function MessagingPanel() {
     // For some reason I can't get the image to show up when I pass the src as a prop. This is gonna be a problem when grabbing image urls from S3.
 
     return (
-        <div className="flex flex-col w-25/96 h-[calc(100vh-56px)] overflow-y-scroll">
+        <div className="flex flex-col w-25/96 h-[calc(100vh-56px)] overflow-y-scroll border-r-1 border-gray-200">
             <div className="flex flex-row mt-[15px] px-7 justify-between w-full">
                 <h1 className="text-3xl font-semibold">Messages</h1>
                 <button className="text-3xl pb-[10px]">

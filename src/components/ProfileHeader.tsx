@@ -15,7 +15,8 @@ function ProfileHeader({ imgSrc }: ProfileHeaderProps) {
     const [friendStatus, setFriendStatus] = useState(0); // 0 = not friends, 1 = friend request sent, 2 = friends
     const isMe = false;
 
-    const moreOptionsButtonStyle = "ml-[15px] px-3 text-2xl rounded-md bg-gray-300 hover:bg-gray-400 transition duration-200 w-max h-[40px]";
+    const moreOptionsButtonStyle =
+        'ml-[15px] px-3 text-2xl rounded-md bg-gray-300 hover:bg-gray-400 transition duration-200 w-max h-[40px]';
 
     const friendButton = useMemo(() => {
         switch (friendStatus) {
@@ -51,7 +52,7 @@ function ProfileHeader({ imgSrc }: ProfileHeaderProps) {
     // For some reason I can't get the image to show up when I pass the src as a prop. This is gonna be a problem when grabbing image urls from S3.
 
     return (
-        <div className="flex flex-col w-full mb-[30px]">
+        <div className="flex flex-col mb-[30px] w-full px-[80px] pt-[40px]">
             <div className="flex flex-row relative">
                 <Image
                     src={logo}

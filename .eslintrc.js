@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
     env: {
         browser: true,
@@ -8,6 +10,7 @@ module.exports = {
         'eslint:recommended',
         'plugin:react/recommended',
         'plugin:@typescript-eslint/recommended',
+        'plugin:@typescript-eslint/strict',
         'plugin:@next/next/recommended',
     ],
     parser: '@typescript-eslint/parser',
@@ -15,10 +18,54 @@ module.exports = {
         ecmaFeatures: {
             jsx: true,
         },
-        ecmaVersion: 12,
+        ecmaVersion: 2021,
         sourceType: 'module',
+        project: path.resolve(__dirname, './tsconfig.json'),
+        tsconfigRootDir: __dirname,
     },
     plugins: ['react', '@typescript-eslint'],
+    rules: {
+        // Warn on console logs
+        'no-console': 'warn',
+
+        // Enforce single quotes unless escaping
+        quotes: ['error', 'single', { avoidEscape: true }],
+
+        // Error on unused variables (ignore _ prefixed)
+        '@typescript-eslint/no-unused-vars': [
+            'error',
+            { argsIgnorePattern: '^_' },
+        ],
+
+        // Style preference for member delimiter
+        '@typescript-eslint/member-delimiter-style': [
+            'warn',
+            {
+                multiline: { delimiter: 'semi', requireLast: true },
+                singleline: { delimiter: 'semi', requireLast: false },
+            },
+        ],
+
+        // Disable Next.js rules not compatible with App Router
+        '@next/next/no-html-link-for-pages': 'off',
+        '@next/next/no-img-element': 'off',
+        '@next/next/no-page-custom-font': 'off',
+        '@typescript-eslint/no-empty-function': 'off',
+        '@next/next/no-duplicate-head': 'off',
+
+        // Optional: disable prop-types (using TypeScript instead)
+        'react/prop-types': 'off',
+    },
+    settings: {
+        react: {
+            version: 'detect',
+        },
+        'import/resolver': {
+            typescript: {
+                project: './tsconfig.json',
+            },
+        },
+    },
     overrides: [
         {
             files: ['**/tests/**/*'],
@@ -28,37 +75,4 @@ module.exports = {
             },
         },
     ],
-    rules: {
-        'react/react-in-jsx-scope': 'off',
-        '@typescript-eslint/no-unused-vars': [
-            'warn',
-            { argsIgnorePattern: '^_' },
-        ],
-        '@typescript-eslint/member-delimiter-style': [
-            'warn',
-            {
-                multiline: {
-                    delimiter: 'semi',
-                    requireLast: true,
-                },
-                singleline: {
-                    delimiter: 'semi',
-                    requireLast: false,
-                },
-            },
-        ],
-        'no-console': 'warn',
-        'react/prop-types': 'off',
-        '@next/next/no-html-link-for-pages': ['error', '/pages'],
-    },
-    settings: {
-        'import/resolver': {
-            typescript: {
-                project: './tsconfig.json',
-            },
-        },
-        react: {
-            version: 'detect',
-        },
-    },
 };
