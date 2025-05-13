@@ -68,9 +68,10 @@ function SearchPage() {
                 <h1 className="text-3xl font-semibold mb-[15px]">People</h1>
                 {sampleSearchData.map((user, index) => (
                     <SearchProfile
+                        key={index} /** @todo: Fix this */
                         name={user.name}
                         friendStatus={user.friendStatus}
-                        isOnline={user.isOnline}
+                        // isOnline={user.isOnline}
                         numMutualFriends={user.numMutualFriends}
                     />
                 ))}

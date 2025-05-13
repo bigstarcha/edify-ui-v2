@@ -37,21 +37,15 @@ module.exports = {
             { argsIgnorePattern: '^_' },
         ],
 
-        // Style preference for member delimiter
-        '@typescript-eslint/member-delimiter-style': [
-            'warn',
-            {
-                multiline: { delimiter: 'semi', requireLast: true },
-                singleline: { delimiter: 'semi', requireLast: false },
-            },
-        ],
-
         // Disable Next.js rules not compatible with App Router
         '@next/next/no-html-link-for-pages': 'off',
         '@next/next/no-img-element': 'off',
         '@next/next/no-page-custom-font': 'off',
         '@typescript-eslint/no-empty-function': 'off',
         '@next/next/no-duplicate-head': 'off',
+        '@typescript-eslint/no-unused-vars': 'error',
+
+        // Eventually, add a rule here that disables indexes for key props
 
         // Optional: disable prop-types (using TypeScript instead)
         'react/prop-types': 'off',

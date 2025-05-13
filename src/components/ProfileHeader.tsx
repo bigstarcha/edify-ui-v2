@@ -5,11 +5,11 @@ import { IoChatbubbleEllipsesSharp } from 'react-icons/io5';
 import logo from '../assets/images/sampleperson.jpeg';
 import MoreOptionsButton from './functional/MoreOptionsButton';
 
-interface ProfileHeaderProps {
-    imgSrc: string;
-}
+// interface ProfileHeaderProps {
+//     imgSrc: string;
+// }
 
-function ProfileHeader({ imgSrc }: ProfileHeaderProps) {
+function ProfileHeader() {
     // These are props that will need to be passed from the server.
     // Make this a let to change later
     const [friendStatus, setFriendStatus] = useState(0); // 0 = not friends, 1 = friend request sent, 2 = friends

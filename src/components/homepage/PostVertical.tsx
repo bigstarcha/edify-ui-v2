@@ -26,15 +26,12 @@ function PostVertical({ name, location, liked }: PostVerticalProps) {
             <div className="flex flex-row justify-between pb-2 px-4">
                 <div className="flex flex-col">
                     <h1 className="font-semibold text-xl">
-                        Brandon Lake
+                        {name}
                         <span className="text-sm text-gray-400">
-                            {' '}
-                            • 3 days ago
+                            {' '}• 3 days ago
                         </span>
                     </h1>
-                    <p className="text-gray-400 text-md">
-                        Los Angeles, California
-                    </p>
+                    <p className="text-gray-400 text-md">{location}</p>
                 </div>
                 <div className="flex flex-col justify-center">
                     <MoreOptionsButton style={moreOptionsButtonStyle} />

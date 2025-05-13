@@ -1,6 +1,5 @@
 'use client';
 import React from 'react';
-import Image from 'next/image';
 import PostImage from './PostImage';
 import _ from 'lodash';
 
@@ -11,7 +10,7 @@ function Posts() {
     return (
         <div className="px-[80px] flex flex-wrap w-full justify-between">
             {_.fill(Array(12), 0).map((index) => (
-                <PostImage />
+                <PostImage key={index} />
             ))}
         </div>
     );

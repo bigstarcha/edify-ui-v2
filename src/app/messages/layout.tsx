@@ -6,5 +6,5 @@ export default function MessagesLayout({
 }: {
     children: React.ReactNode;
 }) {
-    return <MessagingPage children={children} />;
+    return <MessagingPage>{children}</MessagingPage>;
 }

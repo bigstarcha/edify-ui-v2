@@ -1,5 +1,5 @@
+import React from 'react';
 import { redirect } from 'next/navigation';
-import WelcomePage from '@components/WelcomePage';
 import HomePage from '@components/HomePage';
 
 const isAuthenticated = true; // Placeholder for auth check

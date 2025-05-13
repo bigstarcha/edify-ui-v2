@@ -1,7 +1,6 @@
 'use client';
 import React from 'react';
 import Image from 'next/image';
-import _ from 'lodash';
 import src from '../../assets/images/sampleperson.jpeg';
 
 function MessageCard({ user }: { user: string }) {

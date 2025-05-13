@@ -14,6 +14,7 @@ function HomePage() {
         <div>
             {_.fill(Array(10), 0).map((index) => (
                 <PostVertical
+                    key={index}
                     name="Sample Name"
                     location="Sample Location"
                     liked={false}

@@ -7,14 +7,14 @@ import src from '../../assets/images/sampleperson.jpeg';
 interface SearchProfileProps {
     name: string;
     friendStatus: number;
-    isOnline: boolean;
+    // isOnline: boolean;
     numMutualFriends: number;
 }
 
 function SearchProfile({
     name,
     friendStatus,
-    isOnline,
+    // isOnline,
     numMutualFriends,
 }: SearchProfileProps) {
     const handleMessageFriend = useCallback(
@@ -22,10 +22,10 @@ function SearchProfile({
         []
     );
 
-    const handleAddFriend = useCallback(
-        (name: string) => alert(`Add ${name}`),
-        []
-    );
+    // const handleAddFriend = useCallback(
+    //     (name: string) => alert(`Add ${name}`),
+    //     []
+    // );
 
     const handleViewProfile = useCallback(
         (name: string) => alert(`View ${name}'s profile`),

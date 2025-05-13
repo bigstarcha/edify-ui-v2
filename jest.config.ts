@@ -10,10 +10,11 @@ const config: Config = {
     moduleFileExtensions: ['tsx', 'ts', 'js', 'jsx', 'json', 'node'],
     moduleNameMapper: {
         '^@components/(.*)$': '<rootDir>/src/components/$1',
+        '\\.(png|jpg|jpeg|JPG|svg)$': '<rootDir>/src/assets/__mocks__/imageMock.ts'
     },
     setupFilesAfterEnv: ['<rootDir>/src/setupTests.ts'],
     transform: {
-        '^.+\\.(ts|tsx)$': 'ts-jest',
+        '^.+\\.(ts|tsx)$': ['ts-jest', { useESM: true, tsconfig: 'tsconfig.jest.json' }],
     },
 };
 
