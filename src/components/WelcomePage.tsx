@@ -4,7 +4,8 @@ import React from 'react';
 import logo from '../assets/images/new_edify_logo.png';
 import Link from 'next/link';
 
-const bgImageStyle = `bg-[url(../assets/images/welcome2.JPG)] bg-cover w-3/5 h-screen rounded-r-[250px]`;
+const bgImageStyle =
+    'bg-[url(../assets/images/welcome2.JPG)] bg-cover w-3/5 h-screen rounded-r-[250px]';
 
 type LogoType = {
     src: string;

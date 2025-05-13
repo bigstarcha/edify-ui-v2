@@ -1,0 +1,8 @@
+coverage/
+.next
+node_modules/
+.eslintrc.js
+.prettierrc.json
+postcss.config.mjs
+jest.config.ts
+next.config.js

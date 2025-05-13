@@ -1,12 +1,13 @@
 'use client';
 import React from 'react';
 import Image from 'next/image';
-import _ from 'lodash';
 import src from '../../assets/images/sampleperson.jpeg';
 
 function MessageCard({ user }: { user: string }) {
     // Currently seeing a react hydration error, will fix later.
     // For some reason I can't get the image to show up when I pass the src as a prop. This is gonna be a problem when grabbing image urls from S3.
+
+    const newMessage = false;
 
     return (
         <button
@@ -25,10 +26,19 @@ function MessageCard({ user }: { user: string }) {
                     }}
                 />
                 <div className="flex flex-col ml-[20px] text-left justify-center">
-                    <h1 className="text-lg">{user}</h1>
-                    <p className="text-gray-500 text-md">
+                    <h1 className={`text-lg ${newMessage ? 'font-bold' : ''}`}>
+                        {user}
+                    </h1>
+                    <p
+                        className={`text-gray-500 text-md ${newMessage ? 'font-bold' : ''}`}
+                    >
                         Lorem ipsum dolor sit amet...
                     </p>
+                </div>
+                <div className="flex flex-col justify-center ml-auto">
+                    {newMessage && (
+                        <div className="w-3 h-3 bg-primary-400 rounded-full" />
+                    )}
                 </div>
             </div>
         </button>

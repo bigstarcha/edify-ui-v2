@@ -7,14 +7,14 @@ import src from '../../assets/images/sampleperson.jpeg';
 interface SearchProfileProps {
     name: string;
     friendStatus: number;
-    isOnline: boolean;
+    // isOnline: boolean;
     numMutualFriends: number;
 }
 
 function SearchProfile({
     name,
     friendStatus,
-    isOnline,
+    // isOnline,
     numMutualFriends,
 }: SearchProfileProps) {
     const handleMessageFriend = useCallback(
@@ -22,10 +22,10 @@ function SearchProfile({
         []
     );
 
-    const handleAddFriend = useCallback(
-        (name: string) => alert(`Add ${name}`),
-        []
-    );
+    // const handleAddFriend = useCallback(
+    //     (name: string) => alert(`Add ${name}`),
+    //     []
+    // );
 
     const handleViewProfile = useCallback(
         (name: string) => alert(`View ${name}'s profile`),
@@ -34,7 +34,8 @@ function SearchProfile({
 
     // We will need to figure out a way to pass this into the backend
     const [currFriendStatus, setCurrFriendStatus] = useState(friendStatus);
-    const moreOptionsButtonStyle = "ml-3 p-2 text-xl rounded-md bg-base hover:bg-gray-300 transition duration-200 w-max";
+    const moreOptionsButtonStyle =
+        'ml-3 p-2 text-xl rounded-md bg-base hover:bg-gray-300 transition duration-200 w-max';
 
     const profileCtaButton = useMemo(() => {
         switch (currFriendStatus) {
